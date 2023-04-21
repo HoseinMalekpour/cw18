@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace cw18.Models;
 
 public partial class BookMember
 {
+    public int Id { get; set; }     
+
+    [ForeignKey("Books")]
     public int BooksId { get; set; }
+    [ForeignKey("Members")]
 
     public int MembersId { get; set; }
 

@@ -12,4 +12,6 @@ public partial class Member
     public int Age { get; set; }
 
     public  Address? Address { get; set; }
+    public List<BookMember> bookMembers { get; set; }
+
 }

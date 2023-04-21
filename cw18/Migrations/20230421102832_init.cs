@@ -94,11 +94,14 @@ namespace cw18.Migrations
                 name: "BookMembers",
                 columns: table => new
                 {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     BooksId = table.Column<int>(type: "int", nullable: false),
                     MembersId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
+                    table.PrimaryKey("PK_BookMembers", x => x.Id);
                     table.ForeignKey(
                         name: "FK_BookMembers_Books_BooksId",
                         column: x => x.BooksId,

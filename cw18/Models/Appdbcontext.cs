@@ -26,15 +26,15 @@ public partial class AppDbContext : DbContext
 
 
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.Entity<BookMember>(entity =>
-        {
-            entity.HasNoKey();
-        });
+    //protected override void OnModelCreating(ModelBuilder modelBuilder)
+    //{
+    //    modelBuilder.Entity<BookMember>(entity =>
+    //    {
+    //        entity.HasNoKey();
+    //    });
 
 
-    }
+    //}
 
     //protected override void OnModelCreating(ModelBuilder modelBuilder)
     //{

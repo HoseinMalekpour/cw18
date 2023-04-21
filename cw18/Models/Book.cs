@@ -12,4 +12,5 @@ public partial class Book
     public int GenreId { get; set; }
 
     public  Genre Genre { get; set; } 
+    public List<BookMember> bookMembers { get; set; }   
 }

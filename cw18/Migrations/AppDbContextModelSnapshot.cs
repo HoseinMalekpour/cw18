@@ -68,11 +68,19 @@ namespace cw18.Migrations
 
             modelBuilder.Entity("cw18.Models.BookMember", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<int>("BooksId")
                         .HasColumnType("int");
 
                     b.Property<int>("MembersId")
                         .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("BooksId");
 
@@ -190,13 +198,13 @@ namespace cw18.Migrations
             modelBuilder.Entity("cw18.Models.BookMember", b =>
                 {
                     b.HasOne("cw18.Models.Book", "Books")
-                        .WithMany()
+                        .WithMany("bookMembers")
                         .HasForeignKey("BooksId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("cw18.Models.Member", "Members")
-                        .WithMany()
+                        .WithMany("bookMembers")
                         .HasForeignKey("MembersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -217,6 +225,11 @@ namespace cw18.Migrations
                     b.Navigation("Province");
                 });
 
+            modelBuilder.Entity("cw18.Models.Book", b =>
+                {
+                    b.Navigation("bookMembers");
+                });
+
             modelBuilder.Entity("cw18.Models.City", b =>
                 {
                     b.Navigation("Addresses");
@@ -230,6 +243,8 @@ namespace cw18.Migrations
             modelBuilder.Entity("cw18.Models.Member", b =>
                 {
                     b.Navigation("Address");
+
+                    b.Navigation("bookMembers");
                 });
 
             modelBuilder.Entity("cw18.Models.Province", b =>
