@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace cw18.Models;
 
-public partial class City
+public  class City
 {
     public int Id { get; set; }
 

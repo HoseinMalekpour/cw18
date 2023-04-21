@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace cw18.Models;
 
-public partial class BookMember
+public  class BookMember
 {
     public int Id { get; set; }     
 

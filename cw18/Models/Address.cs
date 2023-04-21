@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace cw18.Models;
 
-public partial class Address
+public  class Address
 {
     [ForeignKey("Member")]
     public int Id { get; set; }

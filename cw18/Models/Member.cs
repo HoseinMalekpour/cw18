@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace cw18.Models;
 
-public partial class Member
+public  class Member
 {
     public int Id { get; set; }
 

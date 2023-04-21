@@ -11,7 +11,7 @@ using cw18.Models;
 namespace cw18.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230421102832_init")]
+    [Migration("20230421104532_init")]
     partial class init
     {
         /// <inheritdoc />
